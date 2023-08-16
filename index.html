@@ -1,0 +1,25 @@
+<head>
+<link rel="icon" href="https://homeweb2-rmir.vercel.app/favicon.ico">
+<title>文字列結合プログラム</title>
+</head>
+<body>
+<textarea id="inputText" placeholder="入力したいテキストをこちらに入力してください。" rows="10" cols="50"></textarea>
+<br>
+<input type="text" id="additionalText" placeholder="追加するテキストを入力してください。">
+<br>
+<button onclick="combineText()">結合する</button>
+<br>
+<textarea id="outputText" placeholder="結合されたテキストがこちらに表示されます。" rows="10" cols="50" readonly></textarea>
+<script>
+function combineText() {
+const inputTextArea = document.getElementById("inputText");
+const additionalTextInput = document.getElementById("additionalText");
+const outputTextArea = document.getElementById("outputText");
+const inputLines = inputTextArea.value.split("\n");
+const additionalText = additionalTextInput.value;
+let combinedText = "";
+for (const line of inputLines) {
+combinedText += line + additionalText + "\n";}
+outputTextArea.value = combinedText;}
+</script>
+</body>
